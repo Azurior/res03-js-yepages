@@ -1,4 +1,4 @@
-import { Book } from './classes/Book.js';
+import { Book } from './Book.js';
 
 class BookManager {
     #books;
@@ -21,8 +21,8 @@ class BookManager {
     
     findBookById(id){
         for(let i = 0; i < this.#books.length; i++){
-            if(this.#book[i] === this.#book[i].id){
-                return this.#book[i];
+            if(this.#books[i].id === id){
+                return this.#books[i];
             }else{
                 return 'null';
             }
@@ -32,8 +32,8 @@ class BookManager {
     findBooksByTitle(title){
         let bookTitle = [];
         for(let i = 0; i < this.#books.length; i++){
-            if(this.#book[i].title === title){
-                return bookTitle.push(this.#book[i]);
+            if(this.#books[i].title === title){
+                return bookTitle.push(this.#books[i]);
             }else{
                 return null;
             }
@@ -43,8 +43,8 @@ class BookManager {
     findBooksByAuthor(author){
         let bookAuthor = [];
         for(let i = 0; i < this.#books.length; i++){
-            if(this.#book[i].author === author){
-                return bookAuthor.push(this.#book[i]);
+            if(this.#books[i].author === author){
+                return bookAuthor.push(this.#books[i]);
             }else{
                 return null;
             }
@@ -54,8 +54,8 @@ class BookManager {
     findBooksByPublicationYear(year){
         let bookYear = [];
         for(let i = 0; i < this.#books.length; i++){
-            if(this.#book[i].year === year){
-                return bookYear.push(this.#book[i]);
+            if(this.#books[i].year === year){
+                return bookYear.push(this.#books[i]);
             }else{
                 return null;
             }
@@ -63,16 +63,27 @@ class BookManager {
     }
     
     createBook(book){
-        let newBook = new Book(this.#books.id, this.#books.title, this.#books.author, this.#books.publicationDate, this.#books.totalPages, this.#books.excerpt, this.#books.coverImage);
-        return newBook;
+        this.#books.push(book);
     }
     
-    deleteBook(bookId){
-        
+    deleteBook(bookId) {
+        newBooksTab =[];
+        for(let i = 0; i< this.#books.length; i++) {
+            if(this.#books[i].id !== bookId) {
+                newBooksTab.push(this.#books[i]);
+            }
+
+            this.#books = newBooksTab;
+        }
     }
-    
-    editBook(book){
-        
+
+
+    editBook(book) {
+        for(let i = 0; i< this.#books; i++) {
+            if(this.#books[i].id === book.id) {
+                this.#books[i] = book;
+            }
+        }
     }
     
     save(){
@@ -90,3 +101,5 @@ class BookManager {
         }
     }
 }
+
+export { BookManager };

@@ -1,6 +1,6 @@
-import { User } from './classes/Book.js';
+import { User } from './User.js';
 
-class BookManager {
+class UserManager {
     #users;
     
     contructor(users){
@@ -21,8 +21,8 @@ class BookManager {
     
     findUserById(id){
         for(let i = 0; i < this.#users.length; i++){
-            if(this.#user[i] === this.#user[i].id){
-                return this.#user[i];
+            if(this.#users[i].id === id){
+                return this.#users[i];
             }else{
                 return 'null';
             }
@@ -32,8 +32,8 @@ class BookManager {
     findUserByUsername(username){
         let usersNames = [];
         for(let i = 0; i < this.#users.length; i++){
-            if(this.#user[i].title === title){
-                return usersNames.push(this.#user[i]);
+            if(this.#users[i].title === title){
+                return usersNames.push(this.#users[i]);
             }else{
                 return null;
             }
@@ -43,8 +43,8 @@ class BookManager {
     findUserByEmail(email){
         let usersEmail = [];
         for(let i = 0; i < this.#users.length; i++){
-            if(this.#user[i].email === email){
-                return usersEmail.push(this.#user[i]);
+            if(this.#users[i].email === email){
+                return usersEmail.push(this.#users[i]);
             }else{
                 return null;
             }
@@ -52,21 +52,40 @@ class BookManager {
     }
     
     createUser(user){
-        this.#user.push(user);
+        for(let i = 0; i < user.email.length; i++){
+            if(this.#users.email === user.email[i]){
+                
+                let p = document.createElement("p");
+                let input = document.querySelector(" body section section:nth-of(type(2) form fieldset:nth-of-type(3) input");
+                
+                input.appendChild(p);
+                p.setAttribute("class", "red");
+                p.createTextNode("Cet email existe déjà");
+            }else {
+                
+                this.#users.push(user);
+            }
+            
+            let password = document.querySelector("body section section:nth-of-type(2) form fieldset:nth-of-type(3) input");
+            let confPassword = document.querySelector("body section section:nth-of-type(2) form fieldset:nth-of-type(4) input");
+            if(this.#users.password !== this.users.)
+        }
+        
     }
     
-    ddeleteUser(userId {
+    ddeleteUser(userId){
         newµUsersTab =[];
         for(let i = 0; i< this.#users.length; i++) {
-            if(this.#books[i].id !== userId) {
-                newUsersTab.push(#users[i]);
+            if(this.#users[i].id !== userId) {
+                newUsersTab.push(this.#users[i]);
             }
 
             this.#users = newBooksTab;
+        }
     }
 
 
-    editUser(user) {
+    editUser(user){
         for(let i = 0; i< this.#users; i++) {
             if(this.#users[i].id === user.id) {
                 this.#users[i] = user;
@@ -94,4 +113,4 @@ class BookManager {
     }
 }
 
-export { User };
+export { UserManager };

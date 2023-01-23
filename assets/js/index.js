@@ -13,7 +13,10 @@ window.addEventListener("DOMContentLoaded", function(){
     btnInscription.addEventListener('submit', function(event){
         event.preventDefault();
         
-        let createUser = UserManager.create();
+        //let createUser = UserManager.create();
+        let user = new User();
+        
+        user.UserManager.create();
         
         
     })
