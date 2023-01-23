@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr" prefix="og: https://ogp.me/ns#">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Exo JSON</title>
+      <link rel="stylesheet" href="assets/style/css/style.css">
+    </head>
+    <body>
+        <section>
+            <h1 class="sr-only">Site de connexion ou d'inscription</h1>
+            <section>
+                <h2>Connexion :</h2>
+                <form>
+                    <fieldset>
+                        <label for="email" name="email">Email :</label>
+                        <input type"email" name="email" />
+                    </fieldset>
+                    <fieldset>
+                        <label for="password" name="password">Mot de Passe :</label>
+                        <input type="password" name="password" />
+                    </fieldset>
+                    <button type="submit" name="submit" id="btnConnexion">Connexion</button>
+                </form>
+            </section>
+            <section>
+                <h2>Inscription :</h2>
+                <form>
+                    <fieldset>
+                        <label for="username" name="username">Username :</label>
+                        <input type="text" name="username"/>
+                    </fieldset>
+                    <fieldset>
+                        <label for="email" nale="email">Votre adresse mail :</label>
+                        <input type="email" name="email"/>
+                    </fieldset>
+                    <fieldset>
+                        <label for="password" name="password">Votre Mot de passe :</label>
+                        <input type="password" name="password"/>
+                    </fieldset>
+                    <fieldset>
+                        <label for="confPassword" name="confPassword">Confirmation de votre mot de passe :</label>
+                        <input type="password" name="confPassword"/>
+                    </fieldset>
+                    <fieldset>
+                        <label for="firstname" name="firstname">Votre prénom :</label>
+                        <input type="text" name="firstname"/>
+                    </fieldset>
+                    <fieldset>
+                        <label for="lastname" name="lastname">Votre nom:</label>
+                        <input type="text" name="lastname"/>
+                    </fieldset>
+                    <fieldset>
+                        <label for="profileImage" name="profileImage">Image de profil (png ou jpeg) :</label>
+                        <input type="file" name="profileImage" accept="image/png, image/jpeg" id="file"/>
+                    </fieldset>
+                    <button type="submit" name="inscription" id="btnInscription">S'inscrire</button>
+                </form>
+            </section>
+        </section>
+        <script type="module" src="./assets/js/index.js"></script>
+    </body>
+</html>

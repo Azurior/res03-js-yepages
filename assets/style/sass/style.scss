@@ -1,0 +1,88 @@
+ @import 'reset';
+ @import 'var';
+ 
+ .sr-only{
+     display: none;
+ }
+ 
+ 
+html{
+         
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+        
+    & > body{
+         
+        & > section{
+            
+            display: grid;
+            grid-template-columns: 0.5fr 0.5fr;
+            gap: 4rem;
+            width: 100%;
+            min-height: 80vh;
+            margin-top: 1.7rem;
+            
+            
+            
+            
+            & > section:first-of-type{
+                
+                display: flex;
+                flex-direction: column;
+                width: 40vw;
+                height: 50vh;
+                margin-left: 1.5rem;
+            }
+            
+            & > section:nth-of-type(2){
+                
+                display: flex;
+                flex-direction: column;
+                width: 40vw;
+                height: 60vh;
+                margin-right: 1.5rem;
+                
+                & > form{
+                    
+                    & > fieldset:nth-of-type(7){
+                        
+                        & > input{
+                           background-color: rgba(0, 0, 0, 0);
+                       }
+                    }
+                }
+            }
+            
+            & > section{
+                        
+                border: solid 1px #424340;
+                border-radius: 5px;
+                box-shadow: 5px 3px 2px #226D68;
+                padding: 0.7rem;
+                
+                
+                & > form{
+                    
+                    
+                    
+                    & > fieldset{
+                       border: none;
+                       
+                       & > input{
+                           
+                           border: none;
+                           background-color: #B8CBD0;
+                       }
+                       
+                       
+                    }
+                    
+                    & > button{
+                        font-size: 1.2rem;
+                        
+                    }
+                }
+            }
+        }
+    }
+}
