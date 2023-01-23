@@ -3,8 +3,9 @@ import { User } from './User.js';
 class UserManager {
     #users;
     
-    contructor(users){
-        this.#users = [];
+    constructor(users = []){
+        this.#users = users;
+        console.log(this);
     }
     
     get users (){
@@ -32,7 +33,7 @@ class UserManager {
     findUserByUsername(username){
         let usersNames = [];
         for(let i = 0; i < this.#users.length; i++){
-            if(this.#users[i].title === title){
+            if(this.#users[i].username === username){
                 return usersNames.push(this.#users[i]);
             }else{
                 return null;
@@ -52,23 +53,27 @@ class UserManager {
     }
     
     createUser(user){
-        for(let i = 0; i < user.email.length; i++){
-            if(this.#users.email === user.email[i]){
+        
+        let password = document.querySelector("body section section:nth-of-type(2) form fieldset:nth-of-type(3) input");
+        let confPassword = document.querySelector("body section section:nth-of-type(2) form fieldset:nth-of-type(4) input");
+        let p = document.createElement("p");
+        for(let i = 0; i < this.#users.length; i++){
+            
+            if(this.#users.email === this.users.email[i]){
                 
-                let p = document.createElement("p");
-                let input = document.querySelector(" body section section:nth-of(type(2) form fieldset:nth-of-type(3) input");
-                
-                input.appendChild(p);
+                password.appendChild(p);
                 p.setAttribute("class", "red");
                 p.createTextNode("Cet email existe déjà");
-            }else {
+            }else if(password !== confPassword){
                 
+                let p = document.createElement("p");
+                confPassword.appendChild(p);
+                p.setAttribute("class", "red");
+                p.createTextNode("Vos mots de passe ne correspondent pas !");
+                
+            }else {
                 this.#users.push(user);
             }
-            
-            let password = document.querySelector("body section section:nth-of-type(2) form fieldset:nth-of-type(3) input");
-            let confPassword = document.querySelector("body section section:nth-of-type(2) form fieldset:nth-of-type(4) input");
-            if(this.#users.password !== this.users.)
         }
         
     }

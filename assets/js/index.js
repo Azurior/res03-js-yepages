@@ -5,18 +5,23 @@ import { BookManager } from './classes/BookManager.js';
 
 window.addEventListener("DOMContentLoaded", function(){  
     
-    let btnConnexion = document.getElementById('btnConnexion');
-    let btnInscription = document.getElementById('btnConnexion');
+    let formConnexion = document.getElementById('btnConnexion');
+    let fromInscription = document.querySelector("body section section:nth-of-type(2) form");
     
+    let user1 = new User(1, "Test", "test@gmail.com", "1234", "Marc", "Jhon", "");
+    let users = [];
+    users.push(user1);
     
-    
-    btnInscription.addEventListener('submit', function(event){
+    let userMana = new UserManager(users);
+    console.log(userMana);
+    fromInscription.addEventListener('submit', function(event){
         event.preventDefault();
         
         //let createUser = UserManager.create();
-        let user = new User();
+        let user = new User(User.id, User.username, User.email, User.password, User.firstname, User.lastname, User.profileImage);
         
-        user.UserManager.create();
+        
+        userMana.createUser(user);
         
         
     })
