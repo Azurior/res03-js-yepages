@@ -3,8 +3,8 @@ import { Book } from './Book.js';
 class BookManager {
     #books;
     
-    contructor(books){
-        this.#books = [];
+    constructor(books = []){
+        this.#books = books;
     }
     
     get books (){

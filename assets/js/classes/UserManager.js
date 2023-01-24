@@ -5,7 +5,6 @@ class UserManager {
     
     constructor(users = []){
         this.#users = users;
-        console.log(this);
     }
     
     get users (){
@@ -54,28 +53,43 @@ class UserManager {
     
     createUser(user){
         
+        let test = false;
         let password = document.querySelector("body section section:nth-of-type(2) form fieldset:nth-of-type(3) input");
         let confPassword = document.querySelector("body section section:nth-of-type(2) form fieldset:nth-of-type(4) input");
         let p = document.createElement("p");
+        let confirmpassword = document.getElementById("confPassword").value;
         for(let i = 0; i < this.#users.length; i++){
             
-            if(this.#users.email === this.users.email[i]){
+            if(this.#users[i].email === user.email){
+                console.log('true');
+                test = true
                 
+            }
+            
+            if(test === false){
+                
+                if(user.password !== "" && user.password === confirmpassword){
+                    console.log("envoi");
+                    this.#users.push(user);
+                
+                }else {
+                    
+                    console.log("deuxième confition")
+                    confPassword.appendChild(p);
+                    p.setAttribute("class", "red");
+                    let textPassword = document.createTextNode("Vos mots de passe ne correspondent pas !");
+                    p.appendChild(textPassword);
+                }
+                
+            } else {
+                console.log("première condition");
                 password.appendChild(p);
                 p.setAttribute("class", "red");
-                p.createTextNode("Cet email existe déjà");
-            }else if(password !== confPassword){
-                
-                let p = document.createElement("p");
-                confPassword.appendChild(p);
-                p.setAttribute("class", "red");
-                p.createTextNode("Vos mots de passe ne correspondent pas !");
-                
-            }else {
-                this.#users.push(user);
+                let textEmail = document.createTextNode("Cet email existe déjà");
+                p.appendChild(textEmail); 
             }
         }
-        
+                
     }
     
     ddeleteUser(userId){

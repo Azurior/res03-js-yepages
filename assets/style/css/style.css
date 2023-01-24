@@ -55,6 +55,9 @@ html > body > section > section > form > fieldset > input {
   border: none;
   background-color: #B8CBD0;
 }
+html > body > section > section > form > fieldset > p .class {
+  color: red;
+}
 html > body > section > section > form > button {
   font-size: 1.2rem;
 }
