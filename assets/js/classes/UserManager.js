@@ -61,16 +61,21 @@ class UserManager {
         for(let i = 0; i < this.#users.length; i++){
             
             if(this.#users[i].email === user.email){
-                console.log('true');
-                test = true
+                console.log('Email rentré == Email dans le tableau');
+                test = true;
                 
             }
+            
+            console.log(test);
+            
             
             if(test === false){
                 
                 if(user.password !== "" && user.password === confirmpassword){
                     console.log("envoi");
                     this.#users.push(user);
+                    console.log(user);
+                    break;
                 
                 }else {
                     
@@ -81,13 +86,14 @@ class UserManager {
                     p.appendChild(textPassword);
                 }
                 
-            } else {
+            }else {
                 console.log("Email existe déjà");
                 password.appendChild(p);
                 p.setAttribute("class", "red");
                 let textEmail = document.createTextNode("Cet email existe déjà");
                 p.appendChild(textEmail); 
             }
+            
         }
                 
     }
@@ -114,11 +120,11 @@ class UserManager {
     
     save(){
         let usersJSON = JSON.stringify(this.#users);
-        sessionStorage.setItem("userStorage",  usersJSON);
+        localStorage.setItem("userStorage",  usersJSON);
     }
     
     load(){
-        let usersParse = JSON.parse(sessionStorage.getItem("userStorage",  usersJSON));
+        let usersParse = JSON.parse(localStorage.getItem("userStorage",  usersJSON));
         
         for(let i = 0; i < usersParse.length; i++){
             let newUsersParse = JSON.parse(usersParse[i]);
