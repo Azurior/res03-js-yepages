@@ -74,7 +74,7 @@ class UserManager {
                 
                 }else {
                     
-                    console.log("deuxième confition")
+                    console.log("Mauvais mot de passe")
                     confPassword.appendChild(p);
                     p.setAttribute("class", "red");
                     let textPassword = document.createTextNode("Vos mots de passe ne correspondent pas !");
@@ -82,7 +82,7 @@ class UserManager {
                 }
                 
             } else {
-                console.log("première condition");
+                console.log("Email existe déjà");
                 password.appendChild(p);
                 p.setAttribute("class", "red");
                 let textEmail = document.createTextNode("Cet email existe déjà");
@@ -113,7 +113,7 @@ class UserManager {
     }
     
     save(){
-        let usersJSON = JSON.stringify(users);
+        let usersJSON = JSON.stringify(this.#users);
         sessionStorage.setItem("userStorage",  usersJSON);
     }
     

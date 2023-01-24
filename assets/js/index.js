@@ -13,39 +13,24 @@ window.addEventListener("DOMContentLoaded", function(){
     users.push(user1);
     
     let userMana = new UserManager(users);
-    console.log(userMana);
+    
+    let newUserName = document.getElementById("username");
+    let newUserEmail = document.getElementById("email");
+    let newUserPassword = document.getElementById("password");
+    let newUserFirstName = document.getElementById("firstname");
+    let newUserLastName = document.getElementById("lastname");
+    let newUserProfileImage = document.getElementById("file");
+    let id = userMana.users.length + 1;
+    
+    // Création d'utilisateur
     fromInscription.addEventListener('submit', function(event){
         event.preventDefault();
-        
-        let newUsername = document.getElementById("create-username").value;
-        let newUserEmail = document.getElementById("create-email").value;
-        let newUserPassword = document.getElementById("create-password").value;
-        let newUserFirstName = document.getElementById("createfirstname").value;
-        let newUserLastName = document.getElementById("create-lastname").value;
-        let newUserProfileImage = document.getElementById("file");
-        let id = userMana.users.length + 1;
 
-        console.log(newUsername);
-
-
-        /*let newUser = new User(id., newUsername, newUserEmail, newUserPassword, newUserFirstName, newUserLastName, newUserProfileImage );
+        let newUser = new User(id, newUserName.value, newUserEmail.value, newUserPassword.value, newUserFirstName.value, newUserLastName.value, newUserProfileImage.value);
+        console.log(newUser);
         userMana.createUser(newUser);
-        console.log(userMana.users);
         userMana.save();
-        */
-        
-        
-        
-        
-        
-        
-        let user = new User(User.id, User.username, User.email, User.password, User.firstname, User.lastname, User.profileImage);
-        
-        
-        userMana.createUser(user);
-        console.log(user);
-        
-        
+
     })
     
     
