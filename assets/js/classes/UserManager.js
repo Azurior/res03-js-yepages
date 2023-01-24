@@ -67,15 +67,16 @@ class UserManager {
             }
             
             console.log(test);
-            
-            
-            if(test === false){
+
+        }
+        
+        if(test === false){
                 
                 if(user.password !== "" && user.password === confirmpassword){
                     console.log("envoi");
                     this.#users.push(user);
                     console.log(user);
-                    break;
+                    
                 
                 }else {
                     
@@ -86,14 +87,12 @@ class UserManager {
                     p.appendChild(textPassword);
                 }
                 
-            }else {
-                console.log("Email existe déjà");
-                password.appendChild(p);
-                p.setAttribute("class", "red");
-                let textEmail = document.createTextNode("Cet email existe déjà");
-                p.appendChild(textEmail); 
-            }
-            
+        }else {
+            console.log("Email existe déjà");
+            password.appendChild(p);
+            p.setAttribute("class", "red");
+            let textEmail = document.createTextNode("Cet email existe déjà");
+            p.appendChild(textEmail); 
         }
                 
     }

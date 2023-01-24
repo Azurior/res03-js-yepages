@@ -31,7 +31,7 @@ window.addEventListener("DOMContentLoaded", function(){
         let newUser = new User(id, newUserName.value, newUserEmail.value, newUserPassword.value, newUserFirstName.value, newUserLastName.value, newUserProfileImage.value);
         userMana.createUser(newUser);
         userMana.save();
-
+        
     })
     
     
